@@ -1,7 +1,11 @@
-import { FaSearch } from "react-icons/fa"; // Use FaSearch component instead of faSearch
+import { FaSearch } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const Navbar = () => {
+  const { currentUser } = useSelector((state) => state.user);
+  console.log("Current User:", currentUser);
+
   return (
     <header className="bg-slate-200 shadow-md">
       <div className="flex justify-between items-center max-w-6xl mx-auto p-3">
@@ -41,7 +45,15 @@ const Navbar = () => {
               to="/signin"
               className="hidden sm:inline text-slate-700 hover:underline"
             >
-              Sign In
+              {currentUser && currentUser.avatar ? (
+                <img
+                  src={currentUser.avatar}
+                  alt="User Avatar"
+                  className="w-8 h-8 rounded-full object-cover bg-red-500" // Temporary background for debugging
+                />
+              ) : (
+                "Sign In"
+              )}
             </Link>
           </li>
         </ul>
