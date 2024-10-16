@@ -20,7 +20,7 @@ import Contact from "../components/Contact";
 
 export default function Listing() {
   SwiperCore.use([Navigation]);
-  const [listing, setListing] = useState(n ull);
+  const [listing, setListing] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
   const [copied, setCopied] = useState(false);
