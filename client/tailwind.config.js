@@ -7,7 +7,7 @@ export default {
     extend: {},
   },
   plugins: [
-    lineClamp,
+    lineClamp, // Keep this if you want to use the line-clamp functionality
     // Add other plugins here
   ],
 };
